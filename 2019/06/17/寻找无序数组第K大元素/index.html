@@ -4,23 +4,48 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>Murphy&#39;s blog</title>
+  <title>寻找无序数组第K大元素 | Murphy&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   
     <meta name="author" content="Gao Bo">
   
   
-  <meta name="description" content="blog">
-<meta name="keywords" content="blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Murphy&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+    <meta name="description" content="有这样一个算法题：有一个无序数组，要求找出数组中的第K大元素。比如给定的无序数组如下所示：
+如果k=6，也就是要寻找第6大的元素，很显然，数组中第一大元素是24，第二大元素是20，第三大元素是17…… 第六大元素是9。
+
+方法一：排序法这是最容易想到的方法，先把无序数组从大到小进行排序，排序后的第k个元素自然就是数组中的第k大元素。但是这种方法的时间复杂度是O(nlogn),性能有些差。
+方法二：">
+  
+  <meta name="description" content="有这样一个算法题：有一个无序数组，要求找出数组中的第K大元素。比如给定的无序数组如下所示： 如果k=6，也就是要寻找第6大的元素，很显然，数组中第一大元素是24，第二大元素是20，第三大元素是17…… 第六大元素是9。  方法一：排序法这是最容易想到的方法，先把无序数组从大到小进行排序，排序后的第k个元素自然就是数组中的第k大元素。但是这种方法的时间复杂度是O(nlogn),性能有些差。 方法二：">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="寻找无序数组第K大元素">
+<meta property="og:url" content="http://yoursite.com/2019/06/17/寻找无序数组第K大元素/index.html">
 <meta property="og:site_name" content="Murphy&#39;s blog">
-<meta property="og:description" content="blog">
+<meta property="og:description" content="有这样一个算法题：有一个无序数组，要求找出数组中的第K大元素。比如给定的无序数组如下所示： 如果k=6，也就是要寻找第6大的元素，很显然，数组中第一大元素是24，第二大元素是20，第三大元素是17…… 第六大元素是9。  方法一：排序法这是最容易想到的方法，先把无序数组从大到小进行排序，排序后的第k个元素自然就是数组中的第k大元素。但是这种方法的时间复杂度是O(nlogn),性能有些差。 方法二：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140331032-1379247650.jpg">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140405689-368290318.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140446737-1934542861.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140547149-615587772.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140619830-944508844.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140634313-216455312.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140657487-573296040.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140740611-894501675.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140748359-630270060.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140852213-1771797491.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140927845-1660206358.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140945729-1722235019.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140954104-832419046.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303141014584-83814753.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303141055675-183490286.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303141122654-601888495.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303141133466-1106934005.png">
+<meta property="og:updated_time" content="2019-06-17T14:06:42.026Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Murphy&#39;s blog">
-<meta name="twitter:description" content="blog">
+<meta name="twitter:title" content="寻找无序数组第K大元素">
+<meta name="twitter:description" content="有这样一个算法题：有一个无序数组，要求找出数组中的第K大元素。比如给定的无序数组如下所示： 如果k=6，也就是要寻找第6大的元素，很显然，数组中第一大元素是24，第二大元素是20，第三大元素是17…… 第六大元素是9。  方法一：排序法这是最容易想到的方法，先把无序数组从大到小进行排序，排序后的第k个元素自然就是数组中的第k大元素。但是这种方法的时间复杂度是O(nlogn),性能有些差。 方法二：">
+<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1566782/201903/1566782-20190303140331032-1379247650.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Murphy&#39;s blog" type="application/atom+xml">
   
@@ -58,13 +83,7 @@
   </nav>
   <div class="clearfix"></div>
 </header>
-    <div class="content">
-
-
-
-
-  
-    <article class="post">
+    <div class="content"><article class="post">
   <header>
     
       <div class="icon"></div>
@@ -76,7 +95,7 @@
     
     
   
-    <h1 class="title"><a href="/2019/06/17/寻找无序数组第K大元素/">寻找无序数组第K大元素</a></h1>
+    <h1 class="title">寻找无序数组第K大元素</h1>
   
 
   </header>
@@ -118,103 +137,18 @@
 
     
   </div>
-  <footer class="end-sep">
+  <footer>
     
       
       
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <a href="/2019/06/10/Gao-Bo-s-blog/">
-  <time datetime="2019-06-10T00:19:14.000Z">
-    2019-06-10
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/2019/06/10/Gao-Bo-s-blog/">Gao Bo&#39;s blog</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <p>这是一篇测试文章</p>
-
-    
+  <div class="tags">
+    <a class="tags-link" href="/tags/算法/">算法</a>
   </div>
-  <footer class="end-sep">
-    
-      
-      
+
     
     <div class="clearfix"></div>
   </footer>
 </article>
-
-
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <a href="/2019/06/10/hello-world/">
-  <time datetime="2019-06-09T23:54:38.448Z">
-    2019-06-10
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/2019/06/10/hello-world/">Hello World</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-
-  <nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav>
 
 </div>
   </div>
